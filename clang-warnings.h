@@ -33,52 +33,6 @@
  * @header          clang-warnings.h
  * @copyright       (c) 2011, eosgarden
  * @author          Jean-David Gadina <macmade@eosgarden.net>
- * @description     -Wall
- *                  -Wbad-function-cast
- *                  -Wcast-align
- *                  -Wconversion
- *                  -Wdeclaration-after-statement
- *                  -Wdeprecated-implementations
- *                  -Wextra
- *                  -Wfloat-equal
- *                  -Wformat=2
- *                  -Wformat-nonliteral
- *                  -Wfour-char-constants
- *                  -Wimplicit-atomic-properties
- *                  -Wmissing-braces
- *                  -Wmissing-declarations
- *                  -Wmissing-field-initializers
- *                  -Wmissing-format-attribute
- *                  -Wmissing-noreturn
- *                  -Wmissing-prototypes
- *                  -Wnested-externs
- *                  -Wnewline-eof
- *                  -Wold-style-definition
- *                  -Woverlength-strings
- *                  -Wparentheses
- *                  -Wpointer-arith
- *                  -Wredundant-decls
- *                  -Wreturn-type
- *                  -Wsequence-point
- *                  -Wshadow
- *                  -Wshorten-64-to-32
- *                  -Wsign-compare
- *                  -Wsign-conversion
- *                  -Wstrict-prototypes
- *                  -Wstrict-selector-match
- *                  -Wswitch
- *                  -Wswitch-default
- *                  -Wswitch-enum
- *                  -Wundeclared-selector
- *                  -Wuninitialized
- *                  -Wunknown-pragmas
- *                  -Wunreachable-code
- *                  -Wunused-function
- *                  -Wunused-label
- *                  -Wunused-parameter
- *                  -Wunused-value
- *                  -Wunused-variable
- *                  -Wwrite-strings
  */
 
 #ifndef EOS_CLANG_WARNINGS_H
@@ -90,438 +44,204 @@
 
 #else
 
-/*
- * This enables all the warnings about constructions that some users consider
- * questionable, and that are easy to avoid (or modify to prevent the warning),
- * even in conjunction with macros.  This also enables some language-specific
- * warnings described in C++ Dialect Options and Objective-C and Objective-C++
- * Dialect Options.
- */
+#pragma clang diagnostic fatal "-Wabi"
+#pragma clang diagnostic fatal "-Waddress-of-temporary"
+#pragma clang diagnostic fatal "-Waddress"
+#pragma clang diagnostic fatal "-Waggregate-return"
 #pragma clang diagnostic fatal "-Wall"
-
-/* 
- * Warn whenever a function call is cast to a non-matching type.  For example,
- * warn if "int malloc()" is cast to "anything *".
- */
+#pragma clang diagnostic fatal "-Wambiguous-member-template"
+#pragma clang diagnostic fatal "-Warc-abi"
+#pragma clang diagnostic fatal "-Warc-non-pod-memaccess"
+#pragma clang diagnostic fatal "-Warc-retain-cycles"
+#pragma clang diagnostic fatal "-Warc-unsafe-retained-assign"
+#pragma clang diagnostic fatal "-Warc"
+#pragma clang diagnostic fatal "-Watomic-properties"
+#pragma clang diagnostic fatal "-Wattributes"
+#pragma clang diagnostic fatal "-Wavailability"
 #pragma clang diagnostic fatal "-Wbad-function-cast"
-
-/*
- * Warn whenever a pointer is cast such that the required alignment of the
- * target is increased.  For example, warn if a "char *" is cast to an "int *"
- * on machines where integers can only be accessed at two- or four-byte
- * boundaries.
- */
+#pragma clang diagnostic fatal "-Wbind-to-temporary-copy"
+#pragma clang diagnostic fatal "-Wbitwise-op-parentheses"
+#pragma clang diagnostic fatal "-Wbool-conversions"
+#pragma clang diagnostic fatal "-Wbuiltin-macro-redefined"
+#pragma clang diagnostic fatal "-Wc++-compat"
+#pragma clang diagnostic fatal "-Wc++0x-compat"
+#pragma clang diagnostic fatal "-Wc++0x-extensions"
 #pragma clang diagnostic fatal "-Wcast-align"
-
-/*
- * Warn if a prototype causes a type conversion that is different from what
- * would happen to the same argument in the absence of a prototype. This
- * includes conversions of fixed point to floating and vice versa, and
- * conversions changing the width or signedness of a fixed point argument except
- * when the same as the default promotion.
- * 
- * Also, warn if a negative integer constant expression is implicitly converted
- * to an unsigned type.  For example, warn about the assignment "x = -1" if "x"
- * is unsigned.
- * But do not warn about explicit casts like "(unsigned) -1".
- */
+#pragma clang diagnostic fatal "-Wcast-qual"
+#pragma clang diagnostic fatal "-Wchar-align"
+#pragma clang diagnostic fatal "-Wchar-subscripts"
+#pragma clang diagnostic fatal "-Wcomment"
+#pragma clang diagnostic fatal "-Wcomments"
+#pragma clang diagnostic fatal "-Wconditional-uninitialized"
 #pragma clang diagnostic fatal "-Wconversion"
-
-/* 
- * Warn when a declaration is found after a statement in a block.  This
- * construct, known from C++, was introduced with ISO C99 and is by default
- * allowed in GCC.  It is not supported by ISO C90 and was not supported by GCC
- * versions before GCC 3.0.
- */
+#pragma clang diagnostic fatal "-Wctor-dtor-privacy"
+#pragma clang diagnostic fatal "-Wcustom-atomic-properties"
 #pragma clang diagnostic fatal "-Wdeclaration-after-statement"
-
-/*
- * Warn if method for a deprecated method is implemented, if class for a
- * deprecated class is implemented, if category for a deprecated class is
- * implemented.
- */
+#pragma clang diagnostic fatal "-Wdefault-arg-special-member"
+#pragma clang diagnostic fatal "-Wdelegating-ctor-cycles"
+#pragma clang diagnostic fatal "-Wdelete-non-virtual-dtor"
+#pragma clang diagnostic fatal "-Wdeprecated-declarations"
 #pragma clang diagnostic fatal "-Wdeprecated-implementations"
-
-/* 
- * Print extra warning messages.
- */
+#pragma clang diagnostic fatal "-Wdeprecated-writable-strings"
+#pragma clang diagnostic fatal "-Wdeprecated"
+#pragma clang diagnostic fatal "-Wdisabled-optimization"
+#pragma clang diagnostic fatal "-Wdiscard-qual"
+#pragma clang diagnostic fatal "-Wdiv-by-zero"
+#pragma clang diagnostic fatal "-Wduplicate-method-arg"
+#pragma clang diagnostic fatal "-Weffc++"
+#pragma clang diagnostic fatal "-Wempty-body"
+#pragma clang diagnostic fatal "-Wendif-labels"
+#pragma clang diagnostic fatal "-Wexit-time-destructors"
+#pragma clang diagnostic fatal "-Wextra-tokens"
 #pragma clang diagnostic fatal "-Wextra"
-
-/* 
- * Warn if floating point values are used in equality comparisons.
- * 
- * The idea behind this is that sometimes it is convenient (for the programmer)
- * to consider floating-point values as approximations to infinitely precise
- * real numbers.  If you are doing this, then you need to compute (by analyzing
- * the code, or in some other way) the maximum or likely maximum error that the
- * computation introduces, and allow for it when performing comparisons (and
- * when producing output, but that's a different problem).  In particular,
- * instead of testing for equality, you would check to see whether the two
- * values have ranges that overlap; and this is done with the relational
- * operators, so equality comparisons are probably mistaken.
- */
-#pragma clang diagnostic fatal "-Wfloat-equal"
-
-/*
- * Enable -Wformat plus format checks not included in -Wformat. Currently
- * equivalent to -Wformat -Wformat-nonliteral -Wformat-security -Wformat-y2k.
- */
-#pragma clang diagnostic fatal "-Wformat=2"
-
-/*
- * If -Wformat is specified, also warn if the format string is not a string
- * literal and so cannot be checked, unless the format function takes its format
- * arguments as a "va_list".
- */
+#pragma clang diagnostic fatal "-Wformat-extra-args"
 #pragma clang diagnostic fatal "-Wformat-nonliteral"
-
-/*
- * Warn about four char constants, e.g. OSType 'APPL'.
- */
+#pragma clang diagnostic fatal "-Wformat-zero-length"
+#pragma clang diagnostic fatal "-Wformat"
+#pragma clang diagnostic fatal "-Wformat=2"
 #pragma clang diagnostic fatal "-Wfour-char-constants"
-
-/*
- * Warn when synthesizing a property which is implicitly atomic.
- */
+#pragma clang diagnostic fatal "-Wglobal-constructors"
+#pragma clang diagnostic fatal "-Wgnu-designator"
+#pragma clang diagnostic fatal "-Wgnu"
+#pragma clang diagnostic fatal "-Wheader-hygiene"
+#pragma clang diagnostic fatal "-Widiomatic-parentheses"
+#pragma clang diagnostic fatal "-Wignored-qualifiers"
 #pragma clang diagnostic fatal "-Wimplicit-atomic-properties"
-
-/*
- * Warn if an aggregate or union initializer is not fully bracketed.
- */
+#pragma clang diagnostic fatal "-Wimplicit-function-declaration"
+#pragma clang diagnostic fatal "-Wimplicit-int"
+#pragma clang diagnostic fatal "-Wimplicit"
+#pragma clang diagnostic fatal "-Wimport"
+#pragma clang diagnostic fatal "-Wincompatible-pointer-types"
+#pragma clang diagnostic fatal "-Winit-self"
+#pragma clang diagnostic fatal "-Winitializer-overrides"
+#pragma clang diagnostic fatal "-Winline"
+#pragma clang diagnostic fatal "-Wint-to-pointer-cast"
+#pragma clang diagnostic fatal "-Winvalid-offsetof"
+#pragma clang diagnostic fatal "-Winvalid-pch"
+#pragma clang diagnostic fatal "-Wlarge-by-value-copy"
+#pragma clang diagnostic fatal "-Wliteral-range"
+#pragma clang diagnostic fatal "-Wlocal-type-template-args"
+#pragma clang diagnostic fatal "-Wlogical-op-parentheses"
+#pragma clang diagnostic fatal "-Wlong-long"
+#pragma clang diagnostic fatal "-Wmain"
+#pragma clang diagnostic fatal "-Wmicrosoft"
+#pragma clang diagnostic fatal "-Wmismatched-tags"
 #pragma clang diagnostic fatal "-Wmissing-braces"
-
-/*
- * Warn if a global function is defined without a previous declaration.
- * Do so even if the definition itself provides a prototype.
- * Use this option to detect global functions that are not declared in header
- * files.
- */
 #pragma clang diagnostic fatal "-Wmissing-declarations"
-
-/*
- * Warn if a structure's initializer has some fields missing.
- */
 #pragma clang diagnostic fatal "-Wmissing-field-initializers"
-
-/*
- * Warn about function pointers which might be candidates for "format"
- * attributes.  Note these are only possible candidates, not absolute ones.
- * GCC will guess that function pointers with "format" attributes that are used
- * in assignment, initialization, parameter passing or return statements should
- * have a corresponding "format" attribute in the resulting type.
- * I.e. the left-hand side of the assignment or initialization, the type of the
- * parameter variable, or the return type of the containing function
- * respectively should also have a "format" attribute to avoid the warning.
- * 
- * GCC will also warn about function definitions which might be candidates for
- * "format" attributes.  Again, these are only possible candidates.
- * GCC will guess that "format" attributes might be appropriate for any function
- * that calls a function like "vprintf" or "vscanf", but this might not always
- * be the case, and some functions for which "format" attributes are appropriate
- * may not be detected.
- */
 #pragma clang diagnostic fatal "-Wmissing-format-attribute"
-
-/*
- * Warn about functions which might be candidates for attribute "noreturn".
- * Note these are only possible candidates, not absolute ones.
- * Care should be taken to manually verify functions actually do not ever return
- * before adding the "noreturn" attribute, otherwise subtle code generation bugs
- * could be introduced. You will not get a warning for "main" in hosted C
- * environments.
- */
+#pragma clang diagnostic fatal "-Wmissing-include-dirs"
 #pragma clang diagnostic fatal "-Wmissing-noreturn"
-
-/*
- * Warn if a global function is defined without a previous prototype
- * declaration. This warning is issued even if the definition itself provides
- * a prototype. The aim is to detect global functions that fail to be declared
- * in header files.
- */
-#pragma clang diagnostic fatal "-Wmissing-prototypes"
-
-/*
- * Warn if an "extern" declaration is encountered within a function.
- */
+#pragma clang diagnostic fatal "-Wmost"
+#pragma clang diagnostic fatal "-Wmultichar"
 #pragma clang diagnostic fatal "-Wnested-externs"
-
-/*
- * Warn about files missing a newline at the end of the file.
- */
 #pragma clang diagnostic fatal "-Wnewline-eof"
-
-/*
- * Warn if an old-style function definition is used.  A warning is given even if
- * there is a previous prototype.
- */
+#pragma clang diagnostic fatal "-Wnon-gcc"
+#pragma clang diagnostic fatal "-Wnon-virtual-dtor"
+#pragma clang diagnostic fatal "-Wnonfragile-abi2"
+#pragma clang diagnostic fatal "-Wnonnull"
+#pragma clang diagnostic fatal "-Wnonportable-cfstrings"
+#pragma clang diagnostic fatal "-Wnull-dereference"
+#pragma clang diagnostic fatal "-Wobjc-nonunified-exceptions"
+#pragma clang diagnostic fatal "-Wold-style-cast"
 #pragma clang diagnostic fatal "-Wold-style-definition"
-
-/*
- * Warn about string constants which are longer than the "minimum maximum"
- * length specified in the C standard.	Modern compilers generally allow string
- * constants which are much longer than the standard's minimum limit, but very
- * portable programs should avoid using longer strings.
- * 
- * The limit applies after string constant concatenation, and does not count the
- * trailing NUL. In C89, the limit was 509 characters; in C99, it was raised to
- * 4095. C++98 does not specify a normative minimum maximum, so we do not
- * diagnose overlength strings in C++.
- * 
- * This option is implied by -pedantic, and can be disabled with
- * -Wno-overlength-strings.
- */
+#pragma clang diagnostic fatal "-Wout-of-line-declaration"
+#pragma clang diagnostic fatal "-Woverflow"
 #pragma clang diagnostic fatal "-Woverlength-strings"
-
-/*
- * Warn if parentheses are omitted in certain contexts, such as when there is an
- * assignment in a context where a truth value is expected, or when operators
- * are nested whose precedence people often get confused about. Only the warning
- * for an assignment used as a truth value is supported when compiling C++;
- * the other warnings are only supported when compiling C.
- * 
- * Also warn if a comparison like x<=y<=z appears; this is equivalent to
- * (x<=y ? 1 : 0) <= z, which is a different interpretation from that of
- * ordinary mathematical notation.
- */
+#pragma clang diagnostic fatal "-Woverloaded-virtual"
+#pragma clang diagnostic fatal "-Wpacked"
+#pragma clang diagnostic fatal "-Wpadded"
 #pragma clang diagnostic fatal "-Wparentheses"
-
-/*
- * Warn about anything that depends on the "size of" a function type or of
- * "void". GNU C assigns these types a size of 1, for convenience in
- * calculations with "void *" pointers and pointers to functions.
- */
 #pragma clang diagnostic fatal "-Wpointer-arith"
-
-/*
- * Warn if anything is declared more than once in the same scope, even in cases
- * where multiple declaration is valid and changes nothing.
- */
+#pragma clang diagnostic fatal "-Wpointer-to-int-cast"
+#pragma clang diagnostic fatal "-Wprotocol"
+#pragma clang diagnostic fatal "-Wreadonly-setter-attrs"
 #pragma clang diagnostic fatal "-Wredundant-decls"
-
-/*
- * Warn whenever a function is defined with a return-type that defaults to
- * "int".  Also warn about any "return" statement with no return-value in a
- * function whose return-type is not "void".
- * 
- * For C, also warn if the return type of a function has a type qualifier such
- * as "const".  Such a type qualifier has no effect, since the value returned by
- * a function is not an lvalue.  ISO C prohibits qualified "void" return types
- * on function definitions, so such return types always receive a warning even
- * without this option.
- * 
- * For C++, a function without return type always produces a diagnostic message,
- * even when -Wno-return-type is specified.  The only exceptions are main and
- * functions defined in system headers.
- */
+#pragma clang diagnostic fatal "-Wreorder"
 #pragma clang diagnostic fatal "-Wreturn-type"
-
-/*
- * Warn about code that may have undefined semantics because of violations of
- * sequence point rules in the C and C++ standards.
- * 
- * The C and C++ standards defines the order in which expressions in a C/C++
- * program are evaluated in terms of sequence points, which represent a partial
- * ordering between the execution of parts of the program: those executed before
- * the sequence point, and those executed after it.  These occur after the
- * evaluation of a full expression (one which is not part of a larger
- * expression), after the evaluation of the first operand of a "&&", "||", "? :"
- * or "," (comma) operator, before a function is called (but after the
- * evaluation of its arguments and the expression denoting the called function),
- * and in certain other places.  Other than as expressed by the sequence point
- * rules, the order of evaluation of subexpressions of an expression is not
- * specified.	All these rules describe only a partial order rather than a
- * total order, since, for example, if two functions are called within one
- * expression with no sequence point between them, the order in which the
- * functions are called is not specified.  However, the standards committee have
- * ruled that function calls do not overlap.
- */
+#pragma clang diagnostic fatal "-Wself-assign"
+#pragma clang diagnostic fatal "-Wsemicolon-before-method-body"
 #pragma clang diagnostic fatal "-Wsequence-point"
-
-/*
- * Warn whenever a local variable shadows another local variable, parameter or
- * global variable or whenever a built-in function is shadowed.
- */
 #pragma clang diagnostic fatal "-Wshadow"
-
-/*
- * Warn if a value is implicitly converted from a 64 bit type to a 32 bit type.
- */
 #pragma clang diagnostic fatal "-Wshorten-64-to-32"
-
-/*
- * Warn when a comparison between signed and unsigned values could produce an
- * incorrect result when the signed value is converted to unsigned.
- * This warning is also enabled by -Wextra; to get the other warnings of -Wextra
- * without this warning, use -Wextra -Wno-sign-compare
- */
 #pragma clang diagnostic fatal "-Wsign-compare"
-
-/*
- * Warn for implicit conversions that may change the sign of an integer value,
- * like assigning a signed integer expression to an unsigned integer variable.
- * An explicit cast silences the warning. In C, this option is enabled also by
- * -Wconversion.
- */
-#pragma clang diagnostic fatal "-Wsign-conversion"
-
-/*
- * Warn if a function is declared or defined without specifying the argument
- * types. (An old-style function definition is permitted without a warning if
- * preceded by a declaration which specifies the argument types.)
- */
+#pragma clang diagnostic fatal "-Wsign-promo"
+#pragma clang diagnostic fatal "-Wsizeof-array-argument"
+#pragma clang diagnostic fatal "-Wstack-protector"
+#pragma clang diagnostic fatal "-Wstrict-aliasing"
+#pragma clang diagnostic fatal "-Wstrict-overflow"
 #pragma clang diagnostic fatal "-Wstrict-prototypes"
-
-/*
- * Warn if multiple methods with differing argument and/or return types are
- * found for a given selector when attempting to send a message using this
- * selector to a receiver of type "id" or "Class".  When this flag is off
- * (which is the default behavior), the compiler will omit such warnings if any
- * differences found are confined to types which share the same size and
- * alignment.
- */
 #pragma clang diagnostic fatal "-Wstrict-selector-match"
-
-/*
- * Warn whenever a "switch" statement has an index of enumerated type and lacks
- * a "case" for one or more of the named codes of that enumeration.
- * (The presence of a "default" label prevents this warning.)
- * "case" labels outside the enumeration range also provoke warnings when this
- * option is used.  This warning is enabled by -Wall.
- */
-#pragma clang diagnostic fatal "-Wswitch"
-
-/*
- * Warn whenever a "switch" statement does not have a "default" case.
- */
+#pragma clang diagnostic fatal "-Wsuper-class-method-mismatch"
 #pragma clang diagnostic fatal "-Wswitch-default"
-
-/*
- * Warn whenever a "switch" statement has an index of enumerated type and lacks
- * a "case" for one or more of the named codes of that enumeration.  "case"
- * labels outside the enumeration range also provoke warnings when this option
- * is used.
- */
 #pragma clang diagnostic fatal "-Wswitch-enum"
-
-/*
- * Warn if a "@selector(...)" expression referring to an undeclared selector is
- * found.	A selector is considered undeclared if no method with that name has
- * been declared before the "@selector(...)" expression, either explicitly in an
- * @interface or @protocol declaration, or implicitly in an @implementation
- * section.  This option always performs its checks as soon as a
- * "@selector(...)" expression is found, while -Wselector only performs its
- * checks in the final stage of compilation. This also enforces the coding style
- * convention that methods and selectors must be declared before being used.
- */
+#pragma clang diagnostic fatal "-Wswitch"
+#pragma clang diagnostic fatal "-Wsynth"
+#pragma clang diagnostic fatal "-Wtautological-compare"
+#pragma clang diagnostic fatal "-Wtrigraphs"
+#pragma clang diagnostic fatal "-Wtype-limits"
 #pragma clang diagnostic fatal "-Wundeclared-selector"
-
-/*
- * Warn if an automatic variable is used without first being initialized or if a
- * variable may be clobbered by a "setjmp" call.
- * 
- * These warnings are possible only in optimizing compilation, because they
- * require data flow information that is computed only when optimizing.
- * If you do not specify -O, you will not get these warnings. Instead, GCC will
- * issue a warning about -Wuninitialized requiring -O.
- * 
- * If you want to warn about code which uses the uninitialized value of the
- * variable in its own initializer, use the -Winit-self option.
- * 
- * These warnings occur for individual uninitialized or clobbered elements of
- * structure, union or array variables as well as for variables which are
- * uninitialized or clobbered as a whole.  They do not occur for variables or
- * elements declared "volatile".  Because these warnings depend on optimization,
- * the exact variables or elements for which there are warnings will depend on
- * the precise optimization options and version of GCC used.
- * 
- * Note that there may be no warning about a variable that is used only to
- * compute a value that itself is never used, because such computations may be
- * deleted by data flow analysis before the warnings are printed.
- * 
- * These warnings are made optional because GCC is not smart enough to see all
- * the reasons why the code might be correct despite appearing to have an error.
- */
 #pragma clang diagnostic fatal "-Wuninitialized"
-
-/*
- * Warn when a #pragma directive is encountered which is not understood by GCC.
- * If this command line option is used, warnings will even be issued for unknown
- * pragmas in system header files.  This is not the case if the warnings were
- * only enabled by the -Wall command line option.
- */
 #pragma clang diagnostic fatal "-Wunknown-pragmas"
-
-/*
- * Warn if the compiler detects that code will never be executed.
- * 
- * This option is intended to warn when the compiler detects that at least a
- * whole line of source code will never be executed, because some condition is
- * never satisfied or because it is after a procedure that never returns.
- * 
- * It is possible for this option to produce a warning even though there are
- * circumstances under which part of the affected line can be executed, so care
- * should be taken when removing apparently-unreachable code.
- * 
- * For instance, when a function is inlined, a warning may mean that the line is
- * unreachable in only one inlined copy of the function.
- * 
- * This option is not made part of -Wall because in a debugging version of a
- * program there is often substantial code which checks correct functioning of
- * the program and is, hopefully, unreachable because the program does work.
- * Another common use of unreachable code is to provide behavior which is
- * selectable at compile-time.
- */
-#pragma clang diagnostic fatal "-Wunreachable-code"
-
-/*
- * Warn whenever a static function is declared but not defined or a non-inline
- * static function is unused. This warning is enabled by -Wall.
- */
+#pragma clang diagnostic fatal "-Wunnamed-type-template-args"
+#pragma clang diagnostic fatal "-Wunneeded-internal-declaration"
+#pragma clang diagnostic fatal "-Wunneeded-member-function"
+#pragma clang diagnostic fatal "-Wunused-argument"
+#pragma clang diagnostic fatal "-Wunused-exception-parameter"
 #pragma clang diagnostic fatal "-Wunused-function"
-
-/*
- * Warn whenever a label is declared but not used.
- * This warning is enabled by -Wall.
- * 
- * To suppress this warning use the unused attribute.
- */
 #pragma clang diagnostic fatal "-Wunused-label"
-
-/*
- * Warn whenever a function parameter is unused aside from its declaration.
- * 
- * To suppress this warning use the unused attribute.
- */
+#pragma clang diagnostic fatal "-Wunused-member-function"
 #pragma clang diagnostic fatal "-Wunused-parameter"
-
-/*
- * Warn whenever a statement computes a result that is explicitly not used.
- * This warning is enabled by -Wall.
- * 
- * To suppress this warning cast the expression to void.
- */
 #pragma clang diagnostic fatal "-Wunused-value"
-
-/*
- * Warn whenever a local variable or non-constant static variable is unused
- * aside from its declaration.  This warning is enabled by -Wall.
- * 
- * To suppress this warning use the unused attribute.
- */
 #pragma clang diagnostic fatal "-Wunused-variable"
+#pragma clang diagnostic fatal "-Wunused"
+#pragma clang diagnostic fatal "-Wused-but-marked-unused"
+#pragma clang diagnostic fatal "-Wvariadic-macros"
+#pragma clang diagnostic fatal "-Wvector-conversions"
+#pragma clang diagnostic fatal "-Wvla"
+#pragma clang diagnostic fatal "-Wvolatile-register-var"
+#pragma clang diagnostic fatal "-Wwrite-strings"
+
+/* Not wanted:
+ * 
+ * #pragma clang diagnostic fatal "-Wselector"
+ */
 
 /*
- * When compiling C, give string constants the type "const char[length]" so that
- * copying the address of one into a non-"const" "char *" pointer will get a
- * warning; when compiling C++, warn about the deprecated conversion from string
- * literals to "char *".  This warning, by default, is enabled for C++ programs.
- * These warnings will help you find at compile time code that can try to write
- * into a string constant, but only if you have been very careful about using
- * "const" in declarations and prototypes.
- * Otherwise, it will just be a nuisance; this is why we did not make -Wall
- * request these warnings.
+ * Not recognized by Apple implementation:
+ * 
+ * #pragma clang diagnostic fatal "-Wauto-import"
+ * #pragma clang diagnostic fatal "-Wbuiltin-requires-header"
+ * #pragma clang diagnostic fatal "-Wc++0x-narrowing"
+ * #pragma clang diagnostic fatal "-Wc++11-compat"
+ * #pragma clang diagnostic fatal "-Wc++11-extensions"
+ * #pragma clang diagnostic fatal "-Wc++11-narrowing"
+ * #pragma clang diagnostic fatal "-Wc++98-compat-bind-to-temporary-copy"
+ * #pragma clang diagnostic fatal "-Wc++98-compat-local-type-template-args"
+ * #pragma clang diagnostic fatal "-Wc++98-compat-pedantic"
+ * #pragma clang diagnostic fatal "-Wc++98-compat-unnamed-type-template-args"
+ * #pragma clang diagnostic fatal "-Wc1x-extensions"
+ * #pragma clang diagnostic fatal "-Wc99-extensions"
+ * #pragma clang diagnostic fatal "-Wcatch-incomplete-type-extensions"
+ * #pragma clang diagnostic fatal "-Wduplicate-method-match"
+ * #pragma clang diagnostic fatal "-Wflexible-array-extensions"
+ * #pragma clang diagnostic fatal "-Wmalformed-warning-check"
+ * #pragma clang diagnostic fatal "-Wmissing-method-return-type"
+ * #pragma clang diagnostic fatal "-Wmodule-build"
+ * #pragma clang diagnostic fatal "-WNSObject-attribute"
+ * #pragma clang diagnostic fatal "-Wnull-character"
+ * #pragma clang diagnostic fatal "-Wobjc-missing-super-calls"
+ * #pragma clang diagnostic fatal "-Wobjc-noncopy-retain-block-property"
+ * #pragma clang diagnostic fatal "-Wobjc-property-implementation"
+ * #pragma clang diagnostic fatal "-Wobjc-protocol-method-implementation"
+ * #pragma clang diagnostic fatal "-Wobjc-readonly-with-setter-property"
+ * #pragma clang diagnostic fatal "-Woverriding-method-mismatch"
+ * #pragma clang diagnostic fatal "-Wsentinel"
+ * #pragma clang diagnostic fatal "-Wunicode"
+ * #pragma clang diagnostic fatal "-Wunused-comparison"
+ * #pragma clang diagnostic fatal "-Wunused-result"
+ * #pragma clang diagnostic fatal "-Wuser-defined-literals"
  */
-#pragma clang diagnostic fatal "-Wwrite-strings"
 
 #endif
 
