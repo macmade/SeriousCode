@@ -21,7 +21,7 @@ If your code does not compile with that, maybe it's time for you to learn a bit 
 ### Note about `-Weverything`
 
 When I originally wrote this project, as a Mac and iOS developer, the `-Weverything` flag was not supported on Apple's implementation of Clang.  
-This is way I developed this header file.
+This is why I developed this header file.
 
 I still prefer it over `-Weverything`, as I can then fine-tune the warning flags I want.
 
