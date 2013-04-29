@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2011, Jean-David Gadina <macmade@eosgarden.com>
+ * Copyright (c) 2011, Jean-David Gadina - www.xs-labs.com
  * Distributed under the Boost Software License, Version 1.0.
  * 
  * Boost Software License - Version 1.0 - August 17th, 2003
@@ -31,8 +31,8 @@
 
 /*!
  * @header          clang-warnings.h
- * @copyright       (c) 2011, eosgarden
- * @author          Jean-David Gadina <macmade@eosgarden.net>
+ * @copyright       (c) 2011, XS-Labs
+ * @author          Jean-David Gadina - www.xs-labs.com
  */
 
 #ifndef EOS_CLANG_WARNINGS_H
