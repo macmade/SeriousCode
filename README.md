@@ -1,6 +1,12 @@
 SeriousCode
 ===========
 
+[![Build Status](https://img.shields.io/travis/macmade/SeriousCode.svg?branch=master&style=flat)](https://travis-ci.org/macmade/SeriousCode)
+[![Issues](http://img.shields.io/github/issues/macmade/SeriousCode.svg?style=flat)](https://github.com/macmade/SeriousCode/issues)
+![Status](https://img.shields.io/badge/status-active-brightgreen.svg?style=flat)
+![License](https://img.shields.io/badge/license-boost-brightgreen.svg?style=flat)
+[![Contact](https://img.shields.io/badge/contact-@macmade-blue.svg?style=flat)](https://twitter.com/macmade)
+
 About:
 ------
 
