@@ -12,7 +12,7 @@ About:
 
 **Clang warning enforcement**
 
-This header file enforces Clang warnings to bu turned-on for specific flags (almost everyone, at least each one I was able to find).
+This header file enforces Clang warnings to be turned-on for specific flags (almost everyone, at least each one I was able to find from the LLVM/Clang sources).
 
 When including it, every little code mistake, possibly undefined behavior, every pedantic warning, etc., will turn in a compiler fatal error.
 
