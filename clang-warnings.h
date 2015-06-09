@@ -63,7 +63,6 @@
 #pragma clang diagnostic fatal "-W#pragma-messages"
 #pragma clang diagnostic fatal "-W#warnings"
 #pragma clang diagnostic fatal "-Wabi"
-#pragma clang diagnostic fatal "-Wabsolute-value"
 #pragma clang diagnostic fatal "-Wabstract-final-class"
 #pragma clang diagnostic fatal "-Waddress-of-temporary"
 #pragma clang diagnostic fatal "-Waddress"
@@ -81,7 +80,6 @@
 #pragma clang diagnostic fatal "-Warray-bounds"
 #pragma clang diagnostic fatal "-Wasm-operand-widths"
 #pragma clang diagnostic fatal "-Wasm"
-#pragma clang diagnostic fatal "-Wat-protocol"
 #pragma clang diagnostic fatal "-Watomic-properties"
 #pragma clang diagnostic fatal "-Wattributes"
 #pragma clang diagnostic fatal "-Wauto-import"
@@ -465,6 +463,13 @@
 #pragma clang diagnostic fatal "-Wwritable-strings"
 #pragma clang diagnostic fatal "-Wwrite-strings"
 #pragma clang diagnostic fatal "-Wzero-length-array"
+
+#if __clang_major__ >= 7 || ( __clang_major__ == 6 && __clang_minor__ >= 1 )
+
+#pragma clang diagnostic fatal "-Wabsolute-value"
+#pragma clang diagnostic fatal "-Wat-protocol"
+
+#endif
 
 #if __clang_major__ >= 7
 
