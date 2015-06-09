@@ -84,7 +84,6 @@
 #pragma clang diagnostic fatal "-Wattributes"
 #pragma clang diagnostic fatal "-Wauto-import"
 #pragma clang diagnostic fatal "-Wavailability"
-#pragma clang diagnostic fatal "-Wbackend-plugin"
 #pragma clang diagnostic fatal "-Wbad-array-new-length"
 #pragma clang diagnostic fatal "-Wbad-function-cast"
 #pragma clang diagnostic fatal "-Wbind-to-temporary-copy"
@@ -468,6 +467,7 @@
 
 #pragma clang diagnostic fatal "-Wabsolute-value"
 #pragma clang diagnostic fatal "-Wat-protocol"
+#pragma clang diagnostic fatal "-Wbackend-plugin"
 
 #endif
 
