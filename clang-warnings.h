@@ -37,6 +37,8 @@
 
 #ifndef __clang__
 #error "Clang is required in order to use this header file"
+#elif __clang_major__ < 6
+#error "Clang 6.0.0 or greater is required in order to use this header file"
 #else
 
 /* 
@@ -60,6 +62,7 @@
  * #pragma clang diagnostic fatal "-Wselector"
  */
 
+/* Clang 6.0.0 */
 #pragma clang diagnostic fatal "-W#pragma-messages"
 #pragma clang diagnostic fatal "-W#warnings"
 #pragma clang diagnostic fatal "-Wabi"
@@ -106,9 +109,7 @@
 #pragma clang diagnostic fatal "-Wc++11-extra-semi"
 #pragma clang diagnostic fatal "-Wc++11-long-long"
 #pragma clang diagnostic fatal "-Wc++11-narrowing"
-#pragma clang diagnostic fatal "-Wc++14-extensions"
 #pragma clang diagnostic fatal "-Wc++1y-extensions"
-#pragma clang diagnostic fatal "-Wc++1z-extensions"
 #pragma clang diagnostic fatal "-Wc11-extensions"
 #pragma clang diagnostic fatal "-Wc99-compat"
 #pragma clang diagnostic fatal "-Wc99-extensions"
@@ -117,7 +118,6 @@
 #pragma clang diagnostic fatal "-Wcast-qual"
 #pragma clang diagnostic fatal "-Wchar-align"
 #pragma clang diagnostic fatal "-Wchar-subscripts"
-#pragma clang diagnostic fatal "-Wclass-varargs"
 #pragma clang diagnostic fatal "-Wcomment"
 #pragma clang diagnostic fatal "-Wcomments"
 #pragma clang diagnostic fatal "-Wcompare-distinct-pointer-types"
@@ -128,9 +128,7 @@
 #pragma clang diagnostic fatal "-Wconversion-null"
 #pragma clang diagnostic fatal "-Wconversion"
 #pragma clang diagnostic fatal "-Wcovered-switch-default"
-#pragma clang diagnostic fatal "-Wcstring-format-directive"
 #pragma clang diagnostic fatal "-Wctor-dtor-privacy"
-#pragma clang diagnostic fatal "-Wcuda-compat"
 #pragma clang diagnostic fatal "-Wcustom-atomic-properties"
 #pragma clang diagnostic fatal "-Wdangling-else"
 #pragma clang diagnostic fatal "-Wdangling-field"
@@ -164,16 +162,12 @@
 #pragma clang diagnostic fatal "-Wempty-body"
 #pragma clang diagnostic fatal "-Wendif-labels"
 #pragma clang diagnostic fatal "-Wenum-conversion"
-#pragma clang diagnostic fatal "-Wenum-too-large"
 #pragma clang diagnostic fatal "-Wexit-time-destructors"
-#pragma clang diagnostic fatal "-Wexplicit-initialize-call"
 #pragma clang diagnostic fatal "-Wextern-c-compat"
 #pragma clang diagnostic fatal "-Wextra-semi"
 #pragma clang diagnostic fatal "-Wextra-tokens"
 #pragma clang diagnostic fatal "-Wextra"
-#pragma clang diagnostic fatal "-Wfallback"
 #pragma clang diagnostic fatal "-Wflexible-array-extensions"
-#pragma clang diagnostic fatal "-Wfloat-conversion"
 #pragma clang diagnostic fatal "-Wformat-extra-args"
 #pragma clang diagnostic fatal "-Wformat-invalid-specifier"
 #pragma clang diagnostic fatal "-Wformat-non-iso"
@@ -184,8 +178,6 @@
 #pragma clang diagnostic fatal "-Wformat"
 #pragma clang diagnostic fatal "-Wformat=2"
 #pragma clang diagnostic fatal "-Wfour-char-constants"
-#pragma clang diagnostic fatal "-Wframe-larger-than="
-#pragma clang diagnostic fatal "-Wfunction-def-in-objc-container"
 #pragma clang diagnostic fatal "-Wgcc-compat"
 #pragma clang diagnostic fatal "-Wglobal-constructors"
 #pragma clang diagnostic fatal "-Wgnu-alignof-expression"
@@ -214,8 +206,6 @@
 #pragma clang diagnostic fatal "-Wgnu"
 #pragma clang diagnostic fatal "-Wheader-hygiene"
 #pragma clang diagnostic fatal "-Wignored-attributes"
-#pragma clang diagnostic fatal "-Wignored-optimization-argument"
-#pragma clang diagnostic fatal "-Wignored-pragmas"
 #pragma clang diagnostic fatal "-Wignored-qualifiers"
 #pragma clang diagnostic fatal "-Wimplicit-atomic-properties"
 #pragma clang diagnostic fatal "-Wimplicit-conversion-floating-point-to-bool"
@@ -223,7 +213,6 @@
 #pragma clang diagnostic fatal "-Wimplicit-fallthrough"
 #pragma clang diagnostic fatal "-Wimplicit-function-declaration"
 #pragma clang diagnostic fatal "-Wimplicit-int"
-#pragma clang diagnostic fatal "-Wimplicitly-unsigned-literal"
 #pragma clang diagnostic fatal "-Wimport"
 #pragma clang diagnostic fatal "-Wincompatible-ms-struct"
 #pragma clang diagnostic fatal "-Wincompatible-pointer-types-discards-qualifiers"
@@ -233,7 +222,6 @@
 #pragma clang diagnostic fatal "-Winfinite-recursion"
 #pragma clang diagnostic fatal "-Winit-self"
 #pragma clang diagnostic fatal "-Winitializer-overrides"
-#pragma clang diagnostic fatal "-Winline-asm"
 #pragma clang diagnostic fatal "-Winline"
 #pragma clang diagnostic fatal "-Wint-conversion"
 #pragma clang diagnostic fatal "-Wint-conversions"
@@ -256,7 +244,6 @@
 #pragma clang diagnostic fatal "-Wlogical-op-parentheses"
 #pragma clang diagnostic fatal "-Wlong-long"
 #pragma clang diagnostic fatal "-Wloop-analysis"
-#pragma clang diagnostic fatal "-Wmacro-redefined"
 #pragma clang diagnostic fatal "-Wmain-return-type"
 #pragma clang diagnostic fatal "-Wmain"
 #pragma clang diagnostic fatal "-Wmalformed-warning-check"
@@ -295,10 +282,8 @@
 #pragma clang diagnostic fatal "-Wobjc-cocoa-api"
 #pragma clang diagnostic fatal "-Wobjc-designated-initializers"
 #pragma clang diagnostic fatal "-Wobjc-literal-compare"
-#pragma clang diagnostic fatal "-Wobjc-literal-conversion"
 #pragma clang diagnostic fatal "-Wobjc-method-access"
 #pragma clang diagnostic fatal "-Wobjc-missing-super-calls"
-#pragma clang diagnostic fatal "-Wobjc-multiple-method-names"
 #pragma clang diagnostic fatal "-Wobjc-noncopy-retain-block-property"
 #pragma clang diagnostic fatal "-Wobjc-nonunified-exceptions"
 #pragma clang diagnostic fatal "-Wobjc-property-implementation"
@@ -313,8 +298,6 @@
 #pragma clang diagnostic fatal "-Wobjc-string-concatenation"
 #pragma clang diagnostic fatal "-Wold-style-cast"
 #pragma clang diagnostic fatal "-Wold-style-definition"
-#pragma clang diagnostic fatal "-Wopenmp-clauses"
-#pragma clang diagnostic fatal "-Wopenmp-loop-form"
 #pragma clang diagnostic fatal "-Wout-of-line-declaration"
 #pragma clang diagnostic fatal "-Wover-aligned"
 #pragma clang diagnostic fatal "-Woverflow"
@@ -461,16 +444,38 @@
 #pragma clang diagnostic fatal "-Wwrite-strings"
 #pragma clang diagnostic fatal "-Wzero-length-array"
 
-#if __clang_major__ >= 7 || ( __clang_major__ == 6 && __clang_minor__ >= 1 )
+/* Clang 6.1.0 */
+#if __clang_major__ > 6 || __clang_minor__ >= 1
 
 #pragma clang diagnostic fatal "-Wabsolute-value"
 #pragma clang diagnostic fatal "-Wat-protocol"
 #pragma clang diagnostic fatal "-Wbackend-plugin"
 #pragma clang diagnostic fatal "-Wc++14-compat-pedantic"
 #pragma clang diagnostic fatal "-Wc++14-compat"
+#pragma clang diagnostic fatal "-Wc++14-extensions"
+#pragma clang diagnostic fatal "-Wc++1z-extensions"
+#pragma clang diagnostic fatal "-Wclass-varargs"
+#pragma clang diagnostic fatal "-Wcstring-format-directive"
+#pragma clang diagnostic fatal "-Wcuda-compat"
+#pragma clang diagnostic fatal "-Wenum-too-large"
+#pragma clang diagnostic fatal "-Wexplicit-initialize-call"
+#pragma clang diagnostic fatal "-Wfallback"
+#pragma clang diagnostic fatal "-Wfloat-conversion"
+#pragma clang diagnostic fatal "-Wframe-larger-than="
+#pragma clang diagnostic fatal "-Wfunction-def-in-objc-container"
+#pragma clang diagnostic fatal "-Wignored-optimization-argument"
+#pragma clang diagnostic fatal "-Wignored-pragmas"
+#pragma clang diagnostic fatal "-Wimplicitly-unsigned-literal"
+#pragma clang diagnostic fatal "-Winline-asm"
+#pragma clang diagnostic fatal "-Wmacro-redefined"
+#pragma clang diagnostic fatal "-Wobjc-literal-conversion"
+#pragma clang diagnostic fatal "-Wobjc-multiple-method-names"
+#pragma clang diagnostic fatal "-Wopenmp-clauses"
+#pragma clang diagnostic fatal "-Wopenmp-loop-form"
 
 #endif
 
+/* Clang 7.0.0 */
 #if __clang_major__ >= 7
 
 #pragma clang diagnostic fatal "-Wflag-enum"
