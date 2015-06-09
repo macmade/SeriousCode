@@ -62,7 +62,9 @@
  * #pragma clang diagnostic fatal "-Wselector"
  */
 
-/* Clang 6.0.0 */
+/* Recognized by Clang 6.0.0 */
+#if __clang_major__ >= 6
+
 #pragma clang diagnostic fatal "-W#pragma-messages"
 #pragma clang diagnostic fatal "-W#warnings"
 #pragma clang diagnostic fatal "-Wabi"
@@ -309,16 +311,11 @@
 #pragma clang diagnostic fatal "-Wpadded"
 #pragma clang diagnostic fatal "-Wparentheses-equality"
 #pragma clang diagnostic fatal "-Wparentheses"
-#pragma clang diagnostic fatal "-Wpass-failed"
 #pragma clang diagnostic fatal "-Wpedantic"
 #pragma clang diagnostic fatal "-Wpointer-arith"
-#pragma clang diagnostic fatal "-Wpointer-bool-conversion"
 #pragma clang diagnostic fatal "-Wpointer-to-int-cast"
-#pragma clang diagnostic fatal "-Wpragmas"
 #pragma clang diagnostic fatal "-Wprivate-extern"
 #pragma clang diagnostic fatal "-Wprofile-instr-out-of-date"
-#pragma clang diagnostic fatal "-Wprofile-instr-unprofiled"
-#pragma clang diagnostic fatal "-Wproperty-access-dot-syntax"
 #pragma clang diagnostic fatal "-Wproperty-attribute-mismatch"
 #pragma clang diagnostic fatal "-Wprotocol"
 #pragma clang diagnostic fatal "-Wreceiver-expr"
@@ -374,33 +371,24 @@
 #pragma clang diagnostic fatal "-Wstring-plus-int"
 #pragma clang diagnostic fatal "-Wstrncat-size"
 #pragma clang diagnostic fatal "-Wsuper-class-method-mismatch"
-#pragma clang diagnostic fatal "-Wswitch-bool"
 #pragma clang diagnostic fatal "-Wswitch-default"
 #pragma clang diagnostic fatal "-Wswitch-enum"
 #pragma clang diagnostic fatal "-Wswitch"
 #pragma clang diagnostic fatal "-Wsynth"
-#pragma clang diagnostic fatal "-Wtautological-compare"
 #pragma clang diagnostic fatal "-Wtautological-constant-out-of-range-compare"
-#pragma clang diagnostic fatal "-Wtautological-overlap-compare"
-#pragma clang diagnostic fatal "-Wtautological-pointer-compare"
-#pragma clang diagnostic fatal "-Wtautological-undefined-compare"
 #pragma clang diagnostic fatal "-Wthread-safety-analysis"
 #pragma clang diagnostic fatal "-Wthread-safety-attributes"
 #pragma clang diagnostic fatal "-Wthread-safety-beta"
-#pragma clang diagnostic fatal "-Wthread-safety-negative"
 #pragma clang diagnostic fatal "-Wthread-safety-precise"
-#pragma clang diagnostic fatal "-Wthread-safety-verbose"
 #pragma clang diagnostic fatal "-Wthread-safety"
 #pragma clang diagnostic fatal "-Wtrigraphs"
 #pragma clang diagnostic fatal "-Wtype-limits"
 #pragma clang diagnostic fatal "-Wtype-safety"
 #pragma clang diagnostic fatal "-Wunavailable-declarations"
 #pragma clang diagnostic fatal "-Wundeclared-selector"
-#pragma clang diagnostic fatal "-Wundefined-bool-conversion"
 #pragma clang diagnostic fatal "-Wundefined-reinterpret-cast"
 #pragma clang diagnostic fatal "-Wunicode"
 #pragma clang diagnostic fatal "-Wuninitialized"
-#pragma clang diagnostic fatal "-Wunknown-attributes"
 #pragma clang diagnostic fatal "-Wunknown-pragmas"
 #pragma clang diagnostic fatal "-Wunknown-warning-option"
 #pragma clang diagnostic fatal "-Wunnamed-type-template-args"
@@ -419,7 +407,6 @@
 #pragma clang diagnostic fatal "-Wunused-const-variable"
 #pragma clang diagnostic fatal "-Wunused-exception-parameter"
 #pragma clang diagnostic fatal "-Wunused-function"
-#pragma clang diagnostic fatal "-Wunused-getter-return-value"
 #pragma clang diagnostic fatal "-Wunused-label"
 #pragma clang diagnostic fatal "-Wunused-member-function"
 #pragma clang diagnostic fatal "-Wunused-parameter"
@@ -440,11 +427,12 @@
 #pragma clang diagnostic fatal "-Wvla-extension"
 #pragma clang diagnostic fatal "-Wvla"
 #pragma clang diagnostic fatal "-Wvolatile-register-var"
-#pragma clang diagnostic fatal "-Wwritable-strings"
 #pragma clang diagnostic fatal "-Wwrite-strings"
 #pragma clang diagnostic fatal "-Wzero-length-array"
 
-/* Clang 6.1.0 */
+#endif
+
+/* Recognized by Clang 6.1.0 */
 #if __clang_major__ > 6 || __clang_minor__ >= 1
 
 #pragma clang diagnostic fatal "-Wabsolute-value"
@@ -472,10 +460,26 @@
 #pragma clang diagnostic fatal "-Wobjc-multiple-method-names"
 #pragma clang diagnostic fatal "-Wopenmp-clauses"
 #pragma clang diagnostic fatal "-Wopenmp-loop-form"
+#pragma clang diagnostic fatal "-Wpass-failed"
+#pragma clang diagnostic fatal "-Wpointer-bool-conversion"
+#pragma clang diagnostic fatal "-Wpragmas"
+#pragma clang diagnostic fatal "-Wprofile-instr-unprofiled"
+#pragma clang diagnostic fatal "-Wproperty-access-dot-syntax"
+#pragma clang diagnostic fatal "-Wswitch-bool"
+#pragma clang diagnostic fatal "-Wtautological-compare"
+#pragma clang diagnostic fatal "-Wtautological-overlap-compare"
+#pragma clang diagnostic fatal "-Wtautological-pointer-compare"
+#pragma clang diagnostic fatal "-Wtautological-undefined-compare"
+#pragma clang diagnostic fatal "-Wthread-safety-negative"
+#pragma clang diagnostic fatal "-Wthread-safety-verbose"
+#pragma clang diagnostic fatal "-Wundefined-bool-conversion"
+#pragma clang diagnostic fatal "-Wunknown-attributes"
+#pragma clang diagnostic fatal "-Wunused-getter-return-value"
+#pragma clang diagnostic fatal "-Wwritable-strings"
 
 #endif
 
-/* Clang 7.0.0 */
+/* Recognized by Clang 7.0.0 */
 #if __clang_major__ >= 7
 
 #pragma clang diagnostic fatal "-Wflag-enum"
