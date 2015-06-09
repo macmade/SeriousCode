@@ -106,7 +106,6 @@
 #pragma clang diagnostic fatal "-Wc++11-extra-semi"
 #pragma clang diagnostic fatal "-Wc++11-long-long"
 #pragma clang diagnostic fatal "-Wc++11-narrowing"
-#pragma clang diagnostic fatal "-Wc++14-compat-pedantic"
 #pragma clang diagnostic fatal "-Wc++14-compat"
 #pragma clang diagnostic fatal "-Wc++14-extensions"
 #pragma clang diagnostic fatal "-Wc++1y-extensions"
@@ -468,6 +467,7 @@
 #pragma clang diagnostic fatal "-Wabsolute-value"
 #pragma clang diagnostic fatal "-Wat-protocol"
 #pragma clang diagnostic fatal "-Wbackend-plugin"
+#pragma clang diagnostic fatal "-Wc++14-compat-pedantic"
 
 #endif
 
