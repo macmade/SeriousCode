@@ -37,8 +37,6 @@
 
 #ifndef __clang__
 #error "Clang is required in order to use this header file"
-#elif __clang_major__ < 6
-#error "Clang 6.0.0 or greater is required in order to use this header file"
 #else
 
 /* 
