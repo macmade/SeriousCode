@@ -37,6 +37,8 @@
 
 #ifndef __clang__
 #error "Clang is required in order to use this header file"
+#elif __clang_major__ < 6
+#error "Clang 6.0.0 or greater is required in order to use this header file"
 #else
 
 /* 
@@ -63,6 +65,10 @@
 /* Recognized by Clang 6.0.0 */
 #if __clang_major__ >= 6
 
+#if __clang_major__ < 9
+#pragma clang diagnostic fatal "-Wbad-array-new-length"
+#endif
+
 #pragma clang diagnostic fatal "-W#pragma-messages"
 #pragma clang diagnostic fatal "-W#warnings"
 #pragma clang diagnostic fatal "-Wabi"
@@ -87,7 +93,6 @@
 #pragma clang diagnostic fatal "-Wattributes"
 #pragma clang diagnostic fatal "-Wauto-import"
 #pragma clang diagnostic fatal "-Wavailability"
-#pragma clang diagnostic fatal "-Wbad-array-new-length"
 #pragma clang diagnostic fatal "-Wbad-function-cast"
 #pragma clang diagnostic fatal "-Wbind-to-temporary-copy"
 #pragma clang diagnostic fatal "-Wbitfield-constant-conversion"
